@@ -3,5 +3,3 @@ def is_even(n):
         True
     else:
         False
-
-is_even(24)
