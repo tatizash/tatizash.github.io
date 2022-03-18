@@ -1,11 +1,8 @@
-l=[]
-m=5
-n=22
-
 def my_range(m,n):
-    while m <= n:
+    l=[]
+    while m < n:
         l.append(m)
         m = m + 1
-        print(l)
+    return l
 
-print(my_range(m,n))
+print(my_range(5,22))
