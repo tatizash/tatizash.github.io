@@ -13,6 +13,26 @@ def palindrome_primes(a,b):
                 rev=rev*10+(tmp%10)
                 tmp//=10
             if rev==n:
-                print(n, end=",")
+                print (n, end=",")
 
 print(palindrome_primes(100, 999))
+
+#alternatively:
+def is_prime(n):
+    if n > 1:
+        for i in range (2,n):
+            if n % i == 0:
+                return False
+        return True
+    else:
+        return False
+
+def palindrome_primes(a,b):
+    l = []
+    for i in range (a,b):
+        if str(i) == str(i)[::-1]:
+            if is_prime(i):
+                l.append(i)
+    return (l)
+
+print(palindrome_primes(100,1000))
