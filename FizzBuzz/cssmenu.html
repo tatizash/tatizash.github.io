@@ -1,0 +1,93 @@
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+        <Title>CV Menu Prototype</Title>
+        <style>
+            .body {
+                margin: 0px;
+            }
+
+            .menu {
+                position: absolute;
+                height: 100%;
+                width: 140px;
+                background-color: rgb(179, 179, 179);
+            }
+            
+            .menu-item {
+                position: relative;
+                padding: 10px 20px 10px 20px;
+                height: 50px;
+                width: 100px;
+                display: block;
+                font-size: 20px;
+                text-align: center;
+                cursor: auto;
+            }
+
+            .menu-item:hover{
+                background-color: aquamarine;
+            }
+
+            .dropdown{
+                height:fit-content;
+                width: 300px;
+                position: absolute;
+                left: 100%;
+                top: 0px;
+                background-color: rgb(179, 179, 179);
+                font-size: 18px;
+                display:none
+            }
+
+            .menu-item:hover .dropdown{
+                display: block;
+            }
+
+            .dropdown-item{
+                padding: 10px 20px 10px 20px;
+                white-space: nowrap;
+                color: darkslategray
+            }
+
+            .dropdown-item:hover{
+                background-color: aquamarine;
+                cursor: pointer;
+            }
+
+            .dropdown-item a{
+                color: black;
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+            <div class="menu">
+                <div class="menu-item">
+                    Education
+                    <div class="dropdown">
+                        <div class="dropdown-item"><a href="https://en.mgpu.ru/"> Moscow City University</a></div>
+                        <div class="dropdown-item"><a href="https://www.pccu.edu.tw/intl/page/english/"> Chinese Culture University</a></div>
+                        <div class="dropdown-item"><a href="https://www.msu.ru/en/"> Moscow State University</a></div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    Non-profit
+                    <div class="dropdown">
+                        <div class="dropdown-item"><a href="https://www.amcham.ru/eng"> American Chamber of Commerce</a></div>
+                        <div class="dropdown-item"><a href="https://atlascorps.org/"> Atlas Corps</a></div>
+                        <div class="dropdown-item"><a href="https://www.uz.undp.org/"> UNDP</a></div>
+
+                    </div> 
+                </div>
+
+                <div class="menu-item">
+                    Political Risk in IT
+                    <div class="dropdown">
+                        <div class="dropdown-item">Research</div>
+                        <div class="dropdown-item">Dashboard</div>
+                    </div>
+                </div>
+            </div>
+    </body>
+</html>
