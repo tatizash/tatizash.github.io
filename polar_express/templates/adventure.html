@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: #131757;
+            color: white;
+            font-family:'Brush Script MT', cursive;
+        }
+
+        h1 {
+            font-size: 48px;
+            color: rgb(242, 253, 78)
+        }
+
+        p, a {
+            font-size: 24px;
+            color: rgb(255, 255, 255)
+        }
+
+        a {
+            color: rgb(242, 253, 78);
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>{{ title }}</h1>
+
+        <p>{{ text }}</p>
+
+
+        {% if choices %}
+
+            <p>What do you do?</p>
+
+            <ul>
+                {% for (page_name, choice) in choices %}
+                <li>
+                    <a href="{{url_for(page_name)}}">{{choice}}</a>
+                </li>
+                {% endfor %}
+            </ul>
+
+        {% else %}
+            
+            <p>THE END.</p>
+
+
+            <p><a href="{{url_for('start')}}">Play again.</a></p>
+        {% endif %}
+
+
+    </div>
+</body>
+
+</html>
