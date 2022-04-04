@@ -21,7 +21,7 @@ class Triangle():
             return True  
     
     def is_right(self):
-        if (self.side_a**2 + self.side_b**2 == self.side_c**2) or (self.side_c + self.side_b**2 == self.side_a**2) or (self.side_a**2 + self.side_c**2 == self.side_b**2) :
+        if (self.side_a**2 + self.side_b**2 == self.side_c**2) or (self.side_c**2 + self.side_b**2 == self.side_a**2) or (self.side_a**2 + self.side_c**2 == self.side_b**2) :
             return True 
         else:
             return False
@@ -35,6 +35,6 @@ print ("Perimeter = %d" % t.perimeter())
 m = t.scale(3)
 print(m.side_a, m.side_b, m.side_c)
 
-print (t.is_valid)
+print (t.is_valid())
 
-print (t.is_right)
+print (t.is_right())
