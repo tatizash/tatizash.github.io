@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route("/")
 def start():
     title = "The Polar Express"
-    
+
     text = """It's 5 minutes to midnight on the Christmas Eve, and you hear a loud whistle blowing outside.
     You walk out of the front door and see an old-fashioned train. 
     The conductor says the train's going to the North Pole and suggests you take it."""
@@ -16,13 +16,15 @@ def start():
         ('wake_up',"Wake up!")
     ]
 
-    return render_template('adventure.html', title=title, text=text, choices=choices)
+    return render_template('start.html', title=title, text=text, choices=choices)
 
 
 
 @app.route("/train")
 def take_train():
     title = "You take the train to the North Pole..."
+
+    picture_url = "https://i1.wp.com/caps.pictures/200/4-the-polar-express/full/polar-express-disneyscreencaps.com-4503.jpg"
     
     text = """... to meet new friends and share adventures onboard the Polar Express. 
     Eventually, you reach the North Pole, get to meet Santa and receive a bell from Santa's sleigh as the first gift of Christmas."""
@@ -32,7 +34,7 @@ def take_train():
         ('wake_up',"Realize you were dreaming the whole time.")
     ]
 
-    return render_template('adventure.html', title=title, text=text, choices=choices)
+    return render_template('train.html', title=title, text=text, choices=choices, picture_url=picture_url)
 
 @app.route("/wake_up")
 def wake_up():
@@ -42,7 +44,7 @@ def wake_up():
 
     choices = []
 
-    return render_template('adventure.html', title=title, text=text, choices=choices)
+    return render_template('wake_up.html', title=title, text=text, choices=choices)
 
 
 
@@ -54,4 +56,4 @@ def believe():
 
     choices = []
 
-    return render_template('adventure.html', title=title, text=text, choices=choices)
+    return render_template('believe.html', title=title, text=text, choices=choices)
