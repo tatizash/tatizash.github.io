@@ -2,6 +2,15 @@
 
 {% block container %}
 
-    <h1>anagrams!</h1>
+    <h1>Anagrams for {{word}} </h1>
 
+    {% if is_anagram %}
+        <ul>
+            {% for s in anagrams %}
+            <li>{{s}}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+    <h2>None.</h2>
+    {% endif %}
 {% endblock %}

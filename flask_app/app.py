@@ -25,6 +25,17 @@ def fizzbuzz(fizzbuzz_to):
 
     return render_template ('fizzbuzz.html', last_number=fizzbuzz_to, numbers=l)
 
-@app.route("/words")
-def anagrams():
-    return render_template ('anagrams.html')
+@app.route("/words/<string:word>")
+def anagram (word):
+    f = open('words.txt')
+
+    word_list = f.read().splitlines()
+
+    is_anagram = word.upper() in word_list
+
+    anagrams = []
+    for key in word_list:
+        if sorted(word.upper()) == sorted(key):
+            anagrams.append(key) 
+
+    return render_template ('anagrams.html', word=word, is_anagram=is_anagram, anagrams=anagrams)
