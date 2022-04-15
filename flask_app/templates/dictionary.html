@@ -1,0 +1,27 @@
+{% extends "main.html" %}
+
+{% block container %}
+
+    <h1>Looking for {{prefix}} </h1>
+
+    {% if count == 1 %}
+        <p>{{count}} word starts with {{prefix}} </p>
+    {% else %}
+        <p>{{count}} words start with {{prefix}} </p>
+    {% endif %}
+
+    {% if is_real %}
+        {{prefix}} is a word!
+    {% else %}
+    <h2>Word not found.</h2>
+    {% endif %}
+
+    <ul>
+        {% for s in strings %}
+        <li>
+            <a href="{{ url_for('search_for', prefix=s) }}">{{s}}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    
+{% endblock %}
